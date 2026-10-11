@@ -1,0 +1,2 @@
+<c-vars title author="" image="" tone="sage" />
+<div class="folio-cover folio-cover--{{ tone }}" {{ attrs }}>{% if image %}<img src="{{ image }}" alt="" class="folio-cover-image">{% endif %}<strong>{{ title }}</strong><span class="folio-cover-mark" aria-hidden="true">≋</span>{% if author %}<span class="folio-cover-author">{{ author }}</span>{% endif %}</div>

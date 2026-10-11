@@ -1,0 +1,2 @@
+<c-vars title="" caption="" icon="document-text" selected="" />
+<button type="button" class="folio-file-row" aria-pressed="{% if selected %}true{% else %}false{% endif %}" {{ attrs }}><c-folio.icon :name="icon" /><span class="folio-file-details"><strong data-file-name>{{ title }}</strong><small data-file-size>{{ caption }}</small></span><span class="folio-file-selection"><c-folio.icon name="check" /></span></button>

@@ -1,0 +1,2 @@
+<c-vars title progress="" />
+<section class="folio-practice" {{ attrs }}>{% if progress %}<div class="folio-practice-progress" role="progressbar" aria-label="Progress" aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100"><span style="width:{{ progress }}%"></span></div>{% endif %}<h2>{{ title }}</h2><div class="folio-practice-content">{{ slot }}</div><footer class="folio-practice-footer">{{ actions }}</footer></section>

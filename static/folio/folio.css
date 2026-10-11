@@ -1,0 +1,160 @@
+/* Folio: a portable Cotton skin for Bootstrap 5. Load after Bootstrap. */
+.folio { --folio-ink: #101010; --folio-blue: #466fb6; --folio-line: #b9bab5; --folio-muted: #65655f; --folio-soft: #f2f3ed; --folio-focus: #abc5ed; background: #fff; color: var(--folio-ink); font: 16px/1.5 Arial, Helvetica, sans-serif; }
+.folio :is(h1,h2,h3,h4) { color: var(--folio-ink); font-family: inherit; font-weight: 750; letter-spacing: -.035em; }
+.folio a { color: var(--folio-blue); text-underline-offset: 3px; }
+.folio :is(a,button,input,textarea,select,summary):focus-visible { outline: 3px solid var(--folio-focus); outline-offset: 3px; }
+.folio .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 8px 16px; border: 1px solid var(--folio-line); border-bottom-width: 2px; border-radius: 8px; background: white; color: var(--folio-ink); box-shadow: none; font: inherit; font-weight: 600; text-decoration: none; line-height: 1.5; }
+.folio .btn:hover { background: var(--folio-soft); border-color: #747570; }
+.folio .btn-primary, .folio .selected, .folio .folio-button--primary, .folio .folio-button[aria-pressed=true] { background: #080808; color: white; border-color: #080808; }
+.folio .btn-primary:hover, .folio .folio-button--primary:hover { background: #333; color: white; }
+.folio .folio-button--danger { color: #b42318; border-color: #d6a19c; }
+.folio .folio-button--pill { border-radius: 40px; }
+.folio .folio-button--circle { width: 44px; height: 44px; padding: 0; border-radius: 50%; flex-shrink: 0; font-size: 25px; }
+.folio .folio-button--small { font-size: 14px; padding: 5px 12px; }
+.folio .folio-button:disabled { opacity: .45; cursor: not-allowed; }
+.folio-icon { display: inline-block; flex-shrink: 0; width: 24px; height: 24px; vertical-align: middle; background: currentColor; mask: var(--folio-icon) center / contain no-repeat; }
+.folio-panel { border: 1px solid var(--folio-line); border-radius: 16px; padding: clamp(20px,3vw,32px); background: white; }
+.folio-panel--soft { background: var(--folio-soft); }
+.folio-panel--blue { background: #e4efff; }
+.folio-badge { display: inline-flex; align-items: center; padding: 4px 10px; border-radius: 40px; font-size: 12px; font-weight: 600; background: var(--folio-soft); color: var(--folio-muted); }
+.folio-badge--blue { background: #e4efff; color: var(--folio-blue); }
+.folio-badge--success { background: #e8f4df; color: #436e28; }
+.folio-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px; background: #e4efff; border-radius: 40px; padding: 8px 16px; width: fit-content; max-width: 100%; }
+.folio-empty { text-align: center; border: 1px dashed var(--folio-line); border-radius: 16px; padding: 40px 24px; }
+.folio-empty h3 { font-size: 20px; margin: 16px 0 8px; }
+.folio-empty p { color: var(--folio-muted); max-width: 440px; margin: auto; }
+.folio-empty-icon { width: 40px; height: 40px; color: var(--folio-muted); }
+.folio-field { margin-bottom: 24px; }
+.folio-field > label, .folio-field legend { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; }
+.folio .folio-field :is(input:not([type=checkbox]):not([type=radio]):not([type=hidden]),textarea,select) { width: 100%; padding: 10px 14px; border: 1px solid var(--folio-line); border-radius: 7px; background: white; color: var(--folio-ink); }
+.folio-field textarea { line-height: 1.7; font-size: 18px; }
+.folio-choices { padding: 12px; border: 1px solid var(--folio-line); border-radius: 8px; max-height: 240px; overflow-y: auto; }
+.folio-switch { display: flex; align-items: center; flex-direction: row-reverse; justify-content: space-between; padding: 0; gap: 20px; }
+.folio-switch .form-check-input { margin: 0; width: 48px; height: 28px; flex-shrink: 0; }
+.folio-switch label { font-size: 22px; font-weight: 700; }
+.folio .form-check-input:checked { background-color: var(--folio-blue); border-color: var(--folio-blue); }
+.folio-disclosure { padding: 20px; background: var(--folio-soft); border-radius: 14px; }
+.folio-disclosure summary { font-weight: 700; cursor: pointer; }
+.folio-disclosure-content { margin-top: 16px; }
+.folio-navbar { display: grid; grid-template-columns: 1fr minmax(0,4fr) 1fr; align-items: center; gap: 16px; padding: 16px 24px; min-height: 76px; }
+.folio-navbar-start, .folio-navbar-end { display: flex; align-items: center; gap: 10px; }
+.folio-navbar-end { justify-content: flex-end; }
+.folio-navbar-center { min-width: 0; text-align: center; overflow-wrap: anywhere; }
+.folio-tile { min-width: 0; text-align: center; }
+.folio-tile-preview { display: block; aspect-ratio: 5 / 8; border: 1px solid var(--folio-line); border-radius: 7px; padding: 20px; overflow: hidden; color: var(--folio-ink) !important; text-decoration: none; background: white; }
+.folio-tile-preview:hover { outline: 2px solid var(--folio-focus); outline-offset: 3px; }
+.folio-tile h3 { font-size: 18px; margin: 12px 0 3px; }
+.folio-tile h3 a { color: var(--folio-ink); text-decoration: none; }
+.folio-tile p { color: var(--folio-muted); margin: 0; }
+.folio-pagination .page-link { border: 1px solid var(--folio-line); border-bottom-width: 2px; border-radius: 8px; color: var(--folio-ink); background: white; }
+@media (max-width:700px) { .folio-navbar { padding: 12px; gap: 8px; grid-template-columns: auto minmax(0,1fr) auto; } .folio .folio-button--circle { width: 36px; height: 36px; font-size: 22px; } }
+
+.folio .form-control, .folio .form-select { border: 1px solid var(--folio-line); border-radius: 7px; background: white; color: var(--folio-ink); padding: 10px 14px; }
+.folio-switch input[type=checkbox] { appearance: none; cursor: pointer; width: 48px; height: 28px; margin: 0; flex-shrink: 0; border: 1px solid var(--folio-line); border-radius: 40px; background-color: #aaa; background-image: radial-gradient(circle, white 0 10px, transparent 11px); background-size: 24px 24px; background-position: left center; background-repeat: no-repeat; }
+.folio-switch input[type=checkbox]:checked { background-color: var(--folio-blue); border-color: var(--folio-blue); background-position: right center; }
+.folio-switch input[type=checkbox]:disabled { opacity: .45; cursor: not-allowed; }
+
+/* Authoring surfaces: content supplies the meaning; controls stay nearby. */
+.folio-workspace { display: grid; grid-template-columns: minmax(180px,25%) minmax(0,1fr); gap: clamp(28px,5vw,72px); margin: 32px clamp(20px,5vw,80px) 80px; align-items: start; }
+.folio-workspace-sidebar { position: sticky; top: 24px; min-width: 0; }
+.folio-workspace-main { min-width: 0; }
+.folio-cover { aspect-ratio:5/8; border:1px solid var(--folio-line); border-radius:8px; padding:12%; display:flex; flex-direction:column; justify-content:center; text-align:center; color:white; background:#7f9776; position:relative; overflow:hidden; }
+.folio-cover--blue { background:#466fb6; }
+.folio-cover strong { font:700 clamp(26px,3vw,52px)/1.1 Georgia,serif; overflow-wrap:anywhere; z-index:1; }
+.folio-cover-mark { font:60px/1 Georgia,serif; margin-top:24px; z-index:1; }
+.folio-cover-author { position:absolute; bottom:7%; left:10%; right:10%; font:18px Georgia,serif; z-index:1; }
+.folio-cover-image { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.folio-outline-node > summary { display:flex; align-items:center; gap:12px; padding:18px 0; list-style:none; cursor:pointer; font-size:20px; }
+.folio-outline-node > summary::-webkit-details-marker { display:none; }
+.folio-outline-chevron { width:18px; transition:transform .15s; font-size:28px; }
+.folio-outline-node[open] > summary > .folio-outline-chevron { transform:rotate(90deg); }
+.folio-outline-number { color:var(--folio-muted); font-size:16px; }
+.folio-outline-node summary strong { font-weight:600; overflow-wrap:anywhere; min-width:0; }
+.folio-outline-leader { flex:1; min-width:12px; border-bottom:1px dotted var(--folio-line); }
+.folio-outline-actions { display:flex; align-items:center; gap:6px; }
+.folio-outline-children { margin-left:28px; padding-left:20px; border-left:1px solid #e1e1dc; }
+.folio-choice-card { display:flex; flex-direction:column; gap:24px; text-align:left; padding:24px; background:white; border:1px solid var(--folio-line); border-bottom-width:2px; border-radius:12px; color:var(--folio-ink); min-width:0; font:inherit; }
+.folio-choice-card:hover { border-color:var(--folio-blue); background:#f9fbff; }
+.folio-choice-card > strong { font-size:18px; }
+.folio-choice-example { display:block; min-height:100px; font-size:14px; line-height:1.7; }
+.folio-answer-row { display:flex; gap:14px; align-items:center; padding:10px; border:1px solid #e1e1dc; border-radius:10px; background:white; }
+.folio-answer-row:has(input:checked) { background:#e4efff; border-color:#abc5ed; }
+.folio-answer-row > input:not([type=radio]):not([type=checkbox]):not([type=hidden]) { flex:1; min-width:0; }
+.folio-answer-row > input:is([type=radio],[type=checkbox]) { width:22px; height:22px; flex-shrink:0; accent-color:var(--folio-blue); }
+.folio-editor { max-width:900px; margin:24px auto; padding:24px; }
+.folio-editor-header { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:24px; }
+.folio-editor-header h2 { margin:0; font-size:28px; }
+.folio-editor-actions { display:flex; gap:8px; }
+.folio-dialog { border:1px solid var(--folio-line); border-radius:18px; padding:24px; width:min(1100px,calc(100% - 32px)); max-height:90dvh; background:white; color:var(--folio-ink); }
+.folio-dialog::backdrop { background:rgb(0 0 0 / .25); }
+.folio-dialog-header { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-bottom:16px; }
+.folio-dialog-header strong { font-size:20px; }
+.folio-practice { max-width:760px; margin:24px auto; }
+.folio-practice-progress { height:8px; background:#e6e6e6; border-radius:20px; margin:0 0 36px; }
+.folio-practice-progress span { display:block; width:50%; height:100%; background:#78a96c; border-radius:inherit; }
+.folio-practice h2 { font-size:clamp(24px,3vw,36px); text-align:center; margin-bottom:32px; }
+.folio-practice-content { display:grid; gap:14px; }
+.folio-practice-footer { display:flex; align-items:center; justify-content:space-between; gap:16px; border-top:1px solid #e1e1dc; margin-top:32px; padding-top:20px; }
+.folio-shared-actions { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:12px; }
+.folio-state-switch { display:flex; align-items:center; justify-content:center; gap:18px; padding:18px; background:var(--folio-soft); border-radius:20px; }
+.folio-state-switch input { appearance:none; width:48px; height:28px; border:1px solid var(--folio-line); border-radius:40px; background:#aaa radial-gradient(circle,white 0 10px,transparent 11px) left center/24px 24px no-repeat; cursor:pointer; }
+.folio-state-switch input:checked { background-color:var(--folio-blue); background-position:right center; }
+.folio-arrange-only { display:none; }
+[data-folio-arranging=true] .folio-arrange-only { display:inline-flex; }
+[data-folio-arranging=true] .folio-edit-only { display:none; }
+@media(max-width:700px) { .folio-workspace { grid-template-columns:1fr; gap:24px; margin:24px 16px; } .folio-workspace-sidebar { position:static; max-width:200px; width:100%; margin:auto; } .folio-outline-children { margin-left:10px; padding-left:12px; } .folio-outline-node > summary { gap:8px; font-size:17px; } .folio-editor { padding:16px 0; } .folio-dialog { padding:16px; } }
+
+.folio-word-sentence { font-size: 1.5rem; line-height: 2.5; }
+.folio-word-slot { min-width: 6rem; padding: 0 .7rem; border: 0; border-bottom: 2px solid var(--folio-line); border-radius: .4rem .4rem 0 0; background: var(--folio-soft); color: var(--folio-ink); }
+.folio-word-choices { margin-top: 2rem; display: flex; gap: .7rem; flex-wrap: wrap; justify-content: center; }
+.folio-word-choices[hidden], .folio-word-slot[hidden] { display: none; }
+.folio .folio-arrange-only { display:none; }
+.folio [data-folio-arranging=true] .folio-arrange-only { display:inline-flex; }
+.folio [data-folio-arranging=true] .folio-edit-only { display:none; }
+
+.folio-form-field { display:grid; gap:8px; font-size:14px; font-weight:600; }
+.folio-form-field > span { color:var(--folio-muted); }
+.folio-form-field small { font-weight:400; margin-left:.5rem; }
+.folio-form-field :is(input:not([type=hidden]):not([type=checkbox]):not([type=radio]),textarea,select) { width:100%; border:1px solid var(--folio-line); border-radius:8px; padding:12px; background:white; color:var(--folio-ink); font:inherit; }
+.folio-form-field textarea { font-size:18px; line-height:1.6; }
+
+/* Shared geometry keeps equivalent controls aligned across host applications. */
+.folio { --folio-space-1:8px; --folio-space-2:16px; --folio-space-3:24px; --folio-space-4:32px; --folio-space-6:48px; --folio-control-size:44px; --folio-radius-control:8px; --folio-radius-panel:16px; --folio-border-width:1px; }
+.folio .folio-button { min-height:var(--folio-control-size); border-radius:var(--folio-radius-control); }
+.folio .folio-button--circle { width:var(--folio-control-size); height:var(--folio-control-size); min-height:var(--folio-control-size); border-radius:50%; }
+.folio .folio-button--pill { border-radius:999px; }
+.folio-dialog { padding:var(--folio-space-3); border-radius:var(--folio-radius-panel); }
+.folio-navigation-switch { display:flex; justify-content:center; gap:var(--folio-space-3); }
+.folio-navigation-switch a { padding:8px 0; text-decoration:none; font-weight:600; border-bottom:2px solid transparent; }
+.folio-navigation-switch a[aria-current] { color:var(--folio-ink); border-color:var(--folio-ink); }
+.folio-file-row { display:flex; align-items:center; gap:16px; width:100%; min-height:72px; padding:16px; background:white; color:var(--folio-ink); border:0; border-bottom:1px solid var(--folio-line); text-align:left; }
+.folio-file-row[aria-pressed=true] { background:#edf2f8; }
+.folio-file-details { flex:1; min-width:0; }
+.folio-file-details strong { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.folio-file-details small { display:block; color:var(--folio-muted); margin-top:4px; }
+.folio-file-selection { width:24px; height:24px; border:1px solid var(--folio-line); border-radius:50%; display:grid; place-items:center; }
+.folio-file-selection .folio-icon { width:16px; height:16px; visibility:hidden; }
+.folio-file-row[aria-pressed=true] .folio-file-selection { background:var(--folio-blue); border-color:var(--folio-blue); color:white; }
+.folio-file-row[aria-pressed=true] .folio-file-selection .folio-icon { visibility:visible; }
+@media(max-width:700px) { .folio-dialog { padding:var(--folio-space-2); } }
+
+.folio .folio-search-field { display:flex; align-items:center; gap:16px; border:1px solid var(--folio-line); border-radius:8px; padding:8px 16px; margin-bottom:24px; }
+.folio .folio-dialog .folio-search-field input[type=search][name=q][autocomplete=off] { width:100%; min-width:0; border:0; padding:0; border-radius:0; background:transparent; }
+[data-folio-search-results] { max-height:50vh; overflow-y:auto; }
+
+.folio-dialog[data-folio-search-dialog] { width:min(520px,calc(100% - 32px)); }
+
+.folio-segmented-nav { display:inline-flex; padding:3px; border:1px solid var(--folio-line); border-radius:999px; height:44px; background:white; }
+.folio .folio-segmented-nav a { display:flex; align-items:center; justify-content:center; width:104px; border-radius:999px; text-decoration:none; color:var(--folio-ink); font-weight:700; }
+.folio .folio-segmented-nav a[aria-current=page] { color:white; background:var(--folio-ink); }
+
+.folio-appbar { display:grid; grid-template-columns:1fr minmax(0,2fr) 1fr; align-items:center; gap:16px; min-height:76px; padding:16px 24px; }
+.folio-appbar-start,.folio-appbar-actions { display:flex; align-items:center; gap:16px; }
+.folio-appbar-actions { justify-content:flex-end; }
+.folio-appbar-title { text-align:center; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+@media(max-width:700px) { .folio-appbar { grid-template-columns:1fr auto; padding:16px; gap:8px; } .folio-appbar-title { grid-row:2; grid-column:1/-1; } .folio-appbar-title:empty { display:none; } .folio-appbar-start,.folio-appbar-actions { gap:8px; } }
+
+.folio-appbar-actions span[data-manage-context] { display:contents; }
+@media(max-width:700px) { .folio.folio-appbar .folio-segmented-nav a { width:64px; font-size:14px; } }
+
+.folio .folio-button[hidden] { display:none; }

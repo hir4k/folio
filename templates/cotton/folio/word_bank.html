@@ -1,0 +1,5 @@
+<c-vars parts options name="answer" />
+<div class="folio-word-bank" data-folio-word-bank {{ attrs }}>
+    <div class="folio-word-sentence">{% for part in parts %}{{ part }}{% if not forloop.last %}<select name="{{ name }}" aria-label="Blank {{ forloop.counter }}" required><option value="">___</option>{% for option in options %}<option value="{{ option.id }}">{{ option.text }}</option>{% endfor %}</select><button type="button" class="folio-word-slot" aria-label="Clear blank {{ forloop.counter }}" data-folio-word-slot hidden>___</button>{% endif %}{% endfor %}</div>
+    <div class="folio-word-choices" hidden>{% for option in options %}<c-folio.button type="button" data-folio-word-value="{{ option.id }}">{{ option.text }}</c-folio.button>{% endfor %}</div>
+</div>

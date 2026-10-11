@@ -1,0 +1,36 @@
+{% load static %}
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Folio component library</title>
+<c-folio.assets />
+</head><body class="folio">
+<c-folio.navbar>
+    <c-slot name="start"><c-folio.icon-button icon="book-open" label="Library" href="#components" /></c-slot>
+    <strong>Folio · Component library</strong>
+    <c-slot name="end"><c-folio.icon-button icon="settings" label="Settings" /></c-slot>
+</c-folio.navbar>
+<main id="components" style="max-width:900px;margin:40px auto;padding:0 24px">
+<h1>Quiet, confident interfaces.</h1><p>The book builder’s look, ready for your next Django project.</p>
+<c-folio.panel><h2>Buttons</h2><div style="display:flex;gap:12px;flex-wrap:wrap">
+<c-folio.button variant="primary" shape="pill">Create something</c-folio.button>
+<c-folio.button>Secondary action</c-folio.button>
+<c-folio.button variant="danger" size="small">Remove</c-folio.button>
+<c-folio.button disabled>Unavailable</c-folio.button>
+<c-folio.icon-button icon="plus" label="Add item" data-component-test="passed" />
+<c-folio.icon-button label="Back" href="#components">←</c-folio.icon-button>
+</div></c-folio.panel>
+<section style="margin:24px 0"><h2>Tools & status</h2><c-folio.toolbar label="Formatting"><c-folio.button label="Bold"><strong>B</strong></c-folio.button><c-folio.button label="Italic"><em>I</em></c-folio.button><c-folio.icon-button icon="pencil-square" label="Edit" /></c-folio.toolbar><p><c-folio.badge>Draft</c-folio.badge> <c-folio.badge tone="blue">Shared</c-folio.badge> <c-folio.badge tone="success">Published</c-folio.badge></p></section>
+<c-folio.panel tone="soft"><h2>Forms</h2>{% if form %}<form method="post">{% csrf_token %}{% for field in form %}<c-folio.field :field="field" />{% endfor %}<c-folio.button type="submit" variant="primary" shape="pill">Save changes</c-folio.button></form>{% else %}<p>Pass a Django form as <code>form</code> to preview its fields and switches.</p>{% endif %}</c-folio.panel>
+<div style="margin:24px 0"><c-folio.disclosure title="A little more detail">Native HTML disclosure: works with keyboard and without JavaScript.</c-folio.disclosure></div>
+<c-folio.empty title="A fresh start" description="Give your next idea a place to live." icon="book-open"><c-folio.button variant="primary" shape="pill">Create your first item</c-folio.button></c-folio.empty>
+<div style="max-width:240px;margin:32px auto"><c-folio.tile href="#components" title="A reusable tile" caption="Your content, your project"><h2>A blank canvas</h2><p>Put a cover image, preview, or illustration here.</p></c-folio.tile></div>
+<c-folio.workspace>
+<c-slot name="sidebar"><c-folio.cover title="A new idea" author="Your name" /></c-slot>
+<c-folio.outline-node title="Chapter one" :open="True"><c-slot name="actions"><c-folio.icon-button icon="plus" label="Add item" data-component-test="passed" /></c-slot><c-folio.outline-node title="An idea" /></c-folio.outline-node>
+</c-folio.workspace>
+<c-folio.editor title="Make it yours"><c-folio.answer-row><input type="radio" name="example-answer" id="example-answer"><label for="example-answer">A simple answer</label></c-folio.answer-row><c-folio.switch name="visible" label="Visible" /><c-folio.shared-actions count="2" /></c-folio.editor>
+{% if sentence_parts %}<c-folio.word-bank :parts="sentence_parts" :options="word_options" />{% endif %}
+<c-folio.choice-card title="A choice">A miniature preview</c-folio.choice-card>
+<c-folio.button data-folio-open="example-dialog">Preview</c-folio.button>
+<c-folio.dialog id="example-dialog" label="Preview"><c-folio.practice title="Try it"><p>Your interactive content belongs here.</p><c-slot name="actions"><c-folio.button data-folio-close>Continue</c-folio.button></c-slot></c-folio.practice></c-folio.dialog>
+{% if page %}<c-folio.pagination :page="page" />{% endif %}
+</main></body></html>

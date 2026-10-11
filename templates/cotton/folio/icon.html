@@ -1,0 +1,3 @@
+{% load static %}
+<c-vars name class="" />
+{% with path='folio/icons/'|add:name|add:'.svg' %}<span class="folio-icon {{ class }}" aria-hidden="true" style="--folio-icon: url('{% static path %}')" {{ attrs }}></span>{% endwith %}

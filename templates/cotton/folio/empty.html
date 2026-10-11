@@ -1,0 +1,2 @@
+<c-vars title description="" icon="" />
+<div class="folio-empty" {{ attrs }}>{% if icon %}<c-folio.icon :name="icon" class="folio-empty-icon" />{% endif %}<h3>{{ title }}</h3>{% if description %}<p>{{ description }}</p>{% endif %}{% if slot %}<div class="mt-4">{{ slot }}</div>{% endif %}</div>

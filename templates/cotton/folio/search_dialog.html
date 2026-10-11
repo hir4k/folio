@@ -1,0 +1,2 @@
+<c-vars id label action query="" />
+<c-folio.dialog :id="id" :label="label" data-folio-search-dialog><form method="get" action="{{ action }}" role="search" data-folio-search><label class="visually-hidden" for="{{ id }}-input">{{ label }}</label><div class="folio-search-field"><c-folio.icon name="magnifying-glass" /><input id="{{ id }}-input" type="search" name="q" value="{{ query }}" placeholder="{{ label }}" autocomplete="off" autofocus></div><div data-folio-search-results aria-live="polite">{{ slot }}</div></form></c-folio.dialog>

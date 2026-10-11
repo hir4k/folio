@@ -1,0 +1,2 @@
+<c-vars label="App navigation" title="" back_href="" />
+<nav class="folio folio-appbar" aria-label="{{ label }}" {{ attrs }}><div class="folio-appbar-start">{% if back_href %}<c-folio.icon-button href="{{ back_href }}" icon="arrow-left" label="Back" data-folio-back />{% endif %}{{ start }}</div><div class="folio-appbar-title">{% if title %}<strong>{{ title }}</strong>{% endif %}{{ slot }}</div><div class="folio-appbar-actions">{{ actions }}</div></nav>

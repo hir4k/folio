@@ -1,0 +1,2 @@
+<c-vars title number="" open="" class="" />
+<details class="folio-outline-node {{ class }}" {% if open %}open{% endif %} {{ attrs }}><summary><span class="folio-outline-chevron"><c-folio.icon name="chevron-right" /></span>{% if number %}<span class="folio-outline-number">{{ number }}</span>{% endif %}<strong>{{ title }}</strong><span class="folio-outline-leader"></span><span class="folio-outline-actions">{{ actions }}</span></summary><div class="folio-outline-children">{{ slot }}</div></details>

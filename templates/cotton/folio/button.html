@@ -1,0 +1,2 @@
+<c-vars href="" variant="secondary" shape="rounded" size="normal" type="button" label="" class="" />
+{% if href %}<a href="{{ href }}" class="btn folio-button folio-button--{{ variant }} folio-button--{{ shape }} folio-button--{{ size }} {{ class }}" {% if label %}aria-label="{{ label }}"{% endif %} {{ attrs }}>{{ slot }}</a>{% else %}<button type="{{ type }}" class="btn folio-button folio-button--{{ variant }} folio-button--{{ shape }} folio-button--{{ size }} {{ class }}" {% if label %}aria-label="{{ label }}"{% endif %} {{ attrs }}>{{ slot }}</button>{% endif %}

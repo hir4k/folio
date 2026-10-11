@@ -1,0 +1,2 @@
+<c-vars first_label first_href second_label second_href active="first" />
+<div class="folio-segmented-nav" {{ attrs }}><a href="{{ first_href }}" {% if active == 'first' %}aria-current="page"{% endif %}>{{ first_label }}</a><a href="{{ second_href }}" {% if active == 'second' %}aria-current="page"{% endif %}>{{ second_label }}</a></div>

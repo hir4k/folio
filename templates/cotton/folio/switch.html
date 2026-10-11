@@ -1,0 +1,2 @@
+<c-vars name label value="1" checked="" off_icon="" on_icon="" />
+<label class="folio-state-switch">{% if off_icon %}<c-folio.icon :name="off_icon" />{% endif %}<input type="checkbox" name="{{ name }}" value="{{ value }}" role="switch" aria-label="{{ label }}" {% if checked %}checked{% endif %} {{ attrs }}>{% if on_icon %}<c-folio.icon :name="on_icon" />{% endif %}</label>
