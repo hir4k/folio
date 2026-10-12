@@ -1,0 +1,20 @@
+<c-vars left right left_name="pair_left" right_name="pair_right" />
+<div class="folio-pair-matching" data-folio-pairs>
+    <p>Choose one item from each column.</p>
+    <div class="folio-pair-columns">
+        <div class="folio-pair-column" role="group" aria-label="Left items">
+            {% for item in left %}
+            <div data-pair-row>
+                <c-folio.button data-pair-match="{{ item.match_id }}" data-pair-side="left" data-pair-id="{{ item.id }}" data-pair-label="{{ item.text }}" aria-pressed="false">{{ item.text }}<span data-pair-mark hidden><c-folio.icon name="check" /></span><span data-pair-error hidden><c-folio.icon name="x-mark" /></span></c-folio.button>
+                <input type="hidden" name="{{ left_name }}" value="{{ item.id }}">
+                <input type="hidden" name="{{ right_name }}" data-pair-answer value="">
+            </div>
+            {% endfor %}
+        </div>
+        <div class="folio-pair-column" role="group" aria-label="Right items">
+            {% for item in right %}
+            <c-folio.button data-pair-side="right" data-pair-id="{{ item.id }}" data-pair-label="{{ item.text }}" aria-pressed="false">{{ item.text }}<span data-pair-mark hidden><c-folio.icon name="check" /></span><span data-pair-error hidden><c-folio.icon name="x-mark" /></span></c-folio.button>
+            {% endfor %}
+        </div>
+    </div>
+</div>

@@ -93,3 +93,60 @@
         }
     });
 })();
+
+(() => {
+    const resetButton = button => {
+        delete button.dataset.pairPending;
+        delete button.dataset.pairState;
+        button.setAttribute('aria-pressed', 'false');
+        button.removeAttribute('aria-label');
+        button.querySelector('[data-pair-error]').hidden = true;
+    };
+    const updateCompletion = matching => {
+        const left = Array.from(matching.querySelectorAll('[data-pair-side=left]'));
+        const complete = left.every(button => button.dataset.pairState === 'correct');
+        const submit = matching.closest('.folio-practice')?.querySelector('[data-pairs-submit]');
+        if (submit) submit.disabled = !complete;
+    };
+    document.addEventListener('click', event => {
+        const button = event.target.closest('[data-pair-side]');
+        if (!button || button.disabled) return;
+        const matching = button.closest('[data-folio-pairs]');
+        if (!matching || matching.dataset.pairBusy) return;
+        if (button.dataset.pairPending) {
+            resetButton(button);
+            return;
+        }
+        const choices = Array.from(matching.querySelectorAll('[data-pair-side]'));
+        const pending = choices.find(choice => choice.dataset.pairPending && choice.dataset.pairSide === button.dataset.pairSide);
+        if (pending) resetButton(pending);
+        button.dataset.pairPending = 'true';
+        button.setAttribute('aria-pressed', 'true');
+        const left = choices.find(choice => choice.dataset.pairPending && choice.dataset.pairSide === 'left');
+        const right = choices.find(choice => choice.dataset.pairPending && choice.dataset.pairSide === 'right');
+        if (!left || !right) return;
+        const correct = left.dataset.pairMatch === right.dataset.pairId;
+        [left, right].forEach(choice => {
+            delete choice.dataset.pairPending;
+            choice.setAttribute('aria-pressed', 'false');
+            choice.dataset.pairState = correct ? 'correct' : 'wrong';
+            choice.setAttribute('aria-label', `${choice.dataset.pairLabel}: ${correct ? 'correct' : 'incorrect'} match`);
+            choice.querySelector(correct ? '[data-pair-mark]' : '[data-pair-error]').hidden = false;
+            choice.disabled = correct;
+        });
+        if (correct) {
+            left.closest('[data-pair-row]').querySelector('[data-pair-answer]').value = right.dataset.pairId;
+            updateCompletion(matching);
+            return;
+        }
+        // Keep rapid clicks from overlapping the brief error state.
+        matching.dataset.pairBusy = 'true';
+        matching.setAttribute('aria-busy', 'true');
+        setTimeout(() => {
+            resetButton(left);
+            resetButton(right);
+            delete matching.dataset.pairBusy;
+            matching.removeAttribute('aria-busy');
+        }, 600);
+    });
+})();

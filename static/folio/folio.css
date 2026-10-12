@@ -158,3 +158,10 @@
 @media(max-width:700px) { .folio.folio-appbar .folio-segmented-nav a { width:64px; font-size:14px; } }
 
 .folio .folio-button[hidden] { display:none; }
+
+.folio-pair-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--folio-space-3); }
+.folio-pair-column { display:grid; align-content:start; gap:var(--folio-space-2); min-width:0; }
+.folio-pair-column .folio-button { width:100%; min-height:var(--folio-control-size); white-space:normal; overflow-wrap:anywhere; }
+
+.folio .folio-button[data-pair-state=correct] { background:#e4f4df; border-color:#68a46c; color:#245b24; opacity:1; }
+.folio .folio-button[data-pair-state=wrong] { background:#fde8e7; border-color:#c6534d; color:#a32626; }
