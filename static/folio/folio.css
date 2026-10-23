@@ -165,3 +165,7 @@
 
 .folio .folio-button[data-pair-state=correct] { background:#e4f4df; border-color:#68a46c; color:#245b24; opacity:1; }
 .folio .folio-button[data-pair-state=wrong] { background:#fde8e7; border-color:#c6534d; color:#a32626; }
+
+.folio-avatar { display:inline-flex; flex:0 0 auto; align-items:center; justify-content:center; width:48px; height:48px; overflow:hidden; border:1px solid var(--folio-line); border-radius:50%; background:var(--folio-soft); color:var(--folio-ink); font-weight:700; }
+.folio-avatar img { width:100%; height:100%; object-fit:cover; }
+.folio-avatar--large { width:96px; height:96px; font-size:32px; }

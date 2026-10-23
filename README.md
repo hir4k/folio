@@ -68,6 +68,7 @@ Do not change the host project's Cotton directory setting.
 | `icon` | `name` matches a bundled SVG filename; optional `class`. Decorative and hidden from assistive technology. |
 | `field` | Django bound `field`, optional `empty-text`, `class`. Includes labels, help, validation errors, checkbox groups, and switches. |
 | `panel` | `tone`: paper, soft, blue; optional `class`; content in slot. |
+| `avatar` | `src`, accessible `label`, fallback `initial`; `size`: normal or large. |
 | `badge` | `tone`: neutral, blue, success; optional `class`. |
 | `toolbar` | Accessible `label`, optional `class`; buttons in slot. |
 | `navbar` | Accessible `label`; named `start` and `end` slots; default slot in center. |
