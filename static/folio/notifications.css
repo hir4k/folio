@@ -1,0 +1,16 @@
+.folio-notifications { box-sizing: content-box; position: fixed; z-index: 2000; right: max(24px, env(safe-area-inset-right)); bottom: max(24px, env(safe-area-inset-bottom)); display: flex; flex-direction: column; gap: 12px; width: min(380px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); overflow-y: auto; overscroll-behavior: contain; padding: 8px; margin: -8px; pointer-events: none; background: transparent; font-family: Arial, Helvetica, sans-serif; }
+.folio-notification { display: flex; align-items: center; gap: 12px; flex-shrink: 0; padding: 14px 12px 14px 16px; border: 1px solid #dedee4; border-radius: 18px; background: rgb(255 255 255 / 96%); backdrop-filter: blur(16px); box-shadow: 0 4px 14px #20203014; color: #17171c; font-size: 15px; line-height: 1.5; pointer-events: auto; animation: folio-notification-in 180ms ease-out; }
+.folio-notification[hidden] { display: none; }
+.folio-notification-icon { display: flex; align-self: flex-start; margin-top: 4px; color: #3967b2; }
+.folio-notification-icon .folio-icon { width: 22px; height: 22px; }
+.folio-notification[data-level="success"] .folio-notification-icon { color: #37834b; }
+.folio-notification[data-level="warning"] .folio-notification-icon { color: #a56a12; }
+.folio-notification[data-level="error"] .folio-notification-icon { color: #bc3f3f; }
+.folio-notification-message { min-width: 0; flex: 1; overflow-wrap: anywhere; }
+.folio .folio-notification .folio-notification-dismiss { width: 32px; height: 32px; min-height: 32px; padding: 6px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; font: inherit; font-size: 20px; cursor: pointer; align-self: flex-start; border: 0; background: transparent; color: #73737f; box-shadow: none; }
+.folio-notification-dismiss .folio-icon { width: 18px; height: 18px; }
+.folio .folio-notification-dismiss:hover { background: #f0f0f4; }
+.folio-notification-dismiss:focus-visible { outline: 2px solid #854bc2; outline-offset: 2px; }
+@keyframes folio-notification-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@media(max-width:600px) { .folio-notifications { right: max(16px, env(safe-area-inset-right)); bottom: max(16px, env(safe-area-inset-bottom)); width: calc(100vw - 32px); } }
+@media(prefers-reduced-motion:reduce) { .folio-notification { animation: none; } }

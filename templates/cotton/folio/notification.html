@@ -1,0 +1,6 @@
+<c-vars level="info" icon="True" />
+<article class="folio-notification" data-folio-notification data-level="{{ level }}" role="{% if level == 'error' %}alert{% else %}status{% endif %}" aria-atomic="true">
+    {% if icon %}<span class="folio-notification-icon" aria-hidden="true">{% if level == 'success' %}<c-folio.icon name="check-circle" />{% elif level == 'error' or level == 'warning' %}<c-folio.icon name="exclamation-circle" />{% else %}<c-folio.icon name="information-circle" />{% endif %}</span>{% endif %}
+    <div class="folio-notification-message">{{ slot }}</div>
+    <c-folio.icon-button icon="x-mark" label="Dismiss notification" class="folio-notification-dismiss" data-notification-dismiss />
+</article>

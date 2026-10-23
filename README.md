@@ -130,3 +130,34 @@ Spacing, control size, border width, and radius variables are defined on `.folio
 `<c-folio.segmented-nav first_label="Books" first_href="/manage/" second_label="Courses" second_href="/manage/?section=courses" active="first" />` renders equal pill segments with an inset active pill. It uses links and `aria-current="page"`; optional HTMX attributes are forwarded to the wrapper.
 
 `<c-folio.appbar title="Book title" back_href="/manage/">` provides one shared app bar. Supply `start` and `actions` slots for navigation and controls. The back link is optional, works without JavaScript, and exposes `data-folio-back` for a host to enhance using its own navigation history. Folio does not inspect browser history or assume application routes.
+
+## Notifications
+
+Notifications work without Bootstrap. Load `<c-folio.assets :bootstrap="False" />`
+and render a stack containing notification components:
+
+```html
+<section class="folio-notifications folio" data-folio-notifications aria-label="Notifications">
+  <c-folio.notification level="success">Book saved.</c-folio.notification>
+  <c-folio.notification level="error">Could not save. Please try again.</c-folio.notification>
+  <c-folio.notification :icon="False">Your message here.</c-folio.notification>
+</section>
+```
+
+Up to three messages appear at the bottom right, with newer messages below older
+ones. Additional messages wait in a queue. Success and info messages dismiss after
+six seconds of active viewing; hovering, keyboard focus, or a hidden browser tab
+pauses the timer. Errors and warnings remain until dismissed. All messages have a
+close button; reduced-motion preferences and mobile safe areas are respected.
+Without JavaScript, messages remain visible and the stack can scroll.
+
+Client-side messages can use a text-only event (content is never interpreted as HTML):
+
+```js
+document.dispatchEvent(new CustomEvent('folio:notify', {
+  detail: {message: 'Book saved.', level: 'success'}
+}));
+```
+
+New components inserted by HTMX are picked up after swaps. Kenekoi renders Django
+messages through `core/_notifications.html` on both shared pages and the homepage.
