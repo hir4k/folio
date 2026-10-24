@@ -66,7 +66,7 @@ Do not change the host project's Cotton directory setting.
 | `button` | `href` renders a link; otherwise `type` defaults to `button`. `variant`: secondary, primary, danger. `shape`: rounded, circle, pill. `size`: normal, small. Optional `label`, `class`. |
 | `icon-button` | Required accessible `label`; `icon` or custom slot; `href`, `type`, `variant`, `class`. |
 | `icon` | `name` matches a bundled SVG filename; optional `class`. Decorative and hidden from assistive technology. |
-| `field` | Django bound `field`, optional `empty-text`, `class`. Includes labels, help, validation errors, checkbox groups, and switches. |
+| `field` | Django bound `field`, optional `empty-text`, `class`. Use `layout="row"`, optional `label` and `description`, for a settings row with supporting content in the slot. Includes labels, help, validation errors, checkbox groups, and switches. |
 | `panel` | `tone`: paper, soft, blue; optional `class`; content in slot. |
 | `avatar` | `src`, accessible `label`, fallback `initial`; `size`: normal or large. |
 | `badge` | `tone`: neutral, blue, success; optional `class`. |

@@ -169,3 +169,14 @@
 .folio-avatar { display:inline-flex; flex:0 0 auto; align-items:center; justify-content:center; width:48px; height:48px; overflow:hidden; border:1px solid var(--folio-line); border-radius:50%; background:var(--folio-soft); color:var(--folio-ink); font-weight:700; }
 .folio-avatar img { width:100%; height:100%; object-fit:cover; }
 .folio-avatar--large { width:96px; height:96px; font-size:32px; }
+
+.folio-field--row { display: grid; grid-template-columns: minmax(160px, 1fr) minmax(0, 2.6fr); gap: 32px; padding: 28px 0; margin: 0; border-bottom: 1px solid var(--folio-line); }
+.folio-field-heading { padding-top: 10px; }
+.folio-field-heading label { display: block; font-weight: 700; }
+.folio-field-heading p { margin: 4px 0 0; color: var(--folio-muted); font-size: 14px; }
+.folio-field-control { min-width: 0; }
+.folio-field-control .form-text { margin-top: 8px; color: var(--folio-muted); font-size: 14px; }
+@media (max-width: 640px) {
+    .folio-field--row { grid-template-columns: minmax(0, 1fr); gap: 12px; padding: 22px 0; }
+    .folio-field-heading { padding-top: 0; }
+}
